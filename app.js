@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var methodOverride = require("method-override");
-var path = require("path");
+var port = process.env.PORT || 3000;
 var app = express();
 
 //mongoose.connect("mongodb://localhost/todo", { useNewUrlParser: true });
@@ -80,6 +80,6 @@ app.get("*", function(req, res){
     res.redirect("/");
 });
 
-app.listen(3000, function () {
-  console.log('Server Started on Port 3000');
+app.listen(port, function () {
+  console.log('App running at localhost' +port);
 });
